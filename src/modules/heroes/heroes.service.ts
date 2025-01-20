@@ -38,7 +38,7 @@ export class HeroesService {
     return existHero
   }
 
-  async update(id: number, updateHeroDto: UpdateHeroDto) {
+  async update(id: string, updateHeroDto: UpdateHeroDto) {
     // Buscar el héroe por su id
     const existHeroOg = await this.heroModel.findById(id);
 
@@ -58,7 +58,7 @@ export class HeroesService {
   }
 
 
-  async remove(id: number) {
+  async remove(id: string) {
     const existHero = await this.heroModel.findById(id);
 
     // Si el héroe no existe, lanzar una excepción

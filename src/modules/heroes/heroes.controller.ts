@@ -23,12 +23,14 @@ export class HeroesController {
   }
 
   @Patch(':id')
+  
   update(@Param('id') id: string, @Body() updateHeroDto: UpdateHeroDto) {
-    return this.heroesService.update(+id, updateHeroDto);
+    console.log(id)
+    return this.heroesService.update(id, updateHeroDto);
   }
 
   @Delete(':id')
   remove(@Param('id') id: string) {
-    return this.heroesService.remove(+id);
+    return this.heroesService.remove(id);
   }
 }
